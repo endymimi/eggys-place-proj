@@ -6,10 +6,25 @@ import cartImg from "../assets/cartImg.png";
 import loginImg from "../assets/login icon.png";
 import { useState } from "react";
 import dropupIcon from "../assets/arrow up.png";
+import lagosIcon from "../assets/LAGOS.jpeg";
+import abujaIcon from "../assets/ABUJA.jpeg";
+import beninIcon from "../assets/BENIN.jpeg";
 
 
 const Navbar = () => {
  const [dropDown, setDropDown] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState("Lagos")
+  const [showLocationIcon, setShowLocationIcon] = useState(true);
+
+  const locationIcons = {
+    
+      Lagos: lagosIcon,
+      Abuja: abujaIcon,
+      Benin: beninIcon,
+    };
+    
+    console.log("Selected Location:", selectedLocation);
+    
 
   return (
     <>
@@ -20,10 +35,11 @@ const Navbar = () => {
             <img
               className=" md:w-7 h-auto w-8"
               src={location}
-              alt="location-icon"
-            />
-            <h2 className="text-[#F0F0F0] text-[20px]  hidden md:block font-[500]">
-              Location
+              alt="location-icon" onClick={() => setShowLocationIcon(false)} // Switch to text on click
+              />
+            
+            <h2 className="text-[#F0F0F0] text-[20px]  hidden md:block font-[500]"  onClick={() => setShowLocationIcon(true)}>
+              {selectedLocation}
             </h2>
             <div className="dropdown dropdown-center">
               <div tabIndex={0} role="button" className=" m-1 bg-transparent">
@@ -34,18 +50,31 @@ const Navbar = () => {
              
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
+                className=" absolute  dropdown-content menu bg-[#F0F0F0] rounded-box z-10 w-45 p-2 shadow-sm"
               >
-                <li>
-                  <a>Lagos</a>
-                </li>
-                <li>
-                  <a>Abuja</a>
-                </li>
-                <li>
-                  <a>Benin</a>
-                </li>
+                {["Lagos", "Abuja", "Benin"].map((city) => (
+                  <li key={city} className="hover:bg-gray-200 px-3 py-2 rounded-md flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="location"
+                      value={city}
+                      checked={selectedLocation === city}
+                      onChange={() => {
+                        setSelectedLocation(city);
+                        setIsOpen(false); // Close dropdown after selection
+                      }}
+                      className="hidden"
+                      id={city}
+                    />
+                    <label htmlFor={city} className="cursor-pointer flex items-center gap-2">
+                      <img src={locationIcons[city]} alt={`${city}-icon`} className="w-5 h-5" />
+                      {city}
+                    </label>
+                  </li>
+                ))}
               </ul>
+            
+              
               
             </div>
             {/* <img src={dropdown} alt="dropdown" /> */}
