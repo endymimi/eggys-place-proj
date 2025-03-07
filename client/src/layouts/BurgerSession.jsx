@@ -1,7 +1,7 @@
 import React from 'react'
 import { allSections } from '../burgersession';
 import { useState } from 'react';
-import SearchBar from '../utils/SearchBar';
+
 
 const BurgerSession = () => {
     const [selected, setSelected] = useState(1);

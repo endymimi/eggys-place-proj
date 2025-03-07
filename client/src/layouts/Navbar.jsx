@@ -16,8 +16,8 @@ const Navbar = () => {
   return (
     <>
       <header className="bg-[#100101]">
-        <nav className="wrapper flex justify-between items-center">
-          <div className="flex gap-4 items-center">
+        <nav className=" wrapper flex justify-between items-center">
+          <div className="flex gap-4 items-center ">
             <img className=" h-auto" src={navLogo} alt="nav-logo" />
             <img
               className=" md:w-7 h-auto w-8"

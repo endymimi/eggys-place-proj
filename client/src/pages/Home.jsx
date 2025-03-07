@@ -4,6 +4,7 @@ import BurgerSession from '../layouts/BurgerSession'
 import Products from '../layouts/Products'
 
 const Home = () => {
+
   return (
    <>
    <main className='bg-[#2F2F2F]'>
@@ -12,7 +13,7 @@ const Home = () => {
         <div>
           <SearchBar/>
         </div>
-        {/* product div */}
+        
         <div>
          <BurgerSession/> 
         </div>
