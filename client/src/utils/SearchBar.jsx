@@ -14,34 +14,38 @@ const SearchBar = () => {
             </form>
     
             <div>
-            <div className="carousel carousel-center bg-neutral rounded-box max-w-md space-x-4 p-4 md:hidden">
-      
+            <div className="carousel rounded-box w-96 lg:hidden md:none">
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/burger_xepnzf.svg"
+      className="w-full" />
+  </div>
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/combos_we0lfx.svg"
+      className="w-full" />
+  </div>
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/drinks_wco1co.svg"
+      className="w-full" />
+  </div>
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/chickens_pqmbu7.svg"
+      className="w-full" />
+  </div>
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/chips_yn9jhf.svg"
+      className="w-full" />
+  </div>
+  <div className="carousel-item w-1/2">
+    <img
+      src="https://res.cloudinary.com/diww44oar/image/upload/v1741223928/salads_upryv7.svg"
+      className="w-full" />
+  </div>
   
-  <div className="carousel-item lg:hidden">
-    <img
-      src="https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087332/burger-img-1_xwvwpo.svg"
-      className="rounded-box" />
-  </div>
-  <div className="carousel-item">
-    <img
-      src="https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087331/burger-img-2_vjfta9.svg"
-      className="rounded-box" />
-  </div>
-  <div className="carousel-item">
-    <img
-      src="https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087334/burger-img-3_fpxpnu.svg"
-      className="rounded-box" />
-  </div>
-  <div className="carousel-item">
-    <img
-      src="https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087332/burger-img-4_wvhmpj.svg"
-      className="rounded-box" />
-  </div>
-  <div className="carousel-item">
-    <img
-      src="https://res.cloudinary.com/dwkpeu5ra/image/upload/v1741087332/burger-img-5_qojpzu.svg"
-      className="rounded-box" />
-  </div>
 </div>
             </div>
 
