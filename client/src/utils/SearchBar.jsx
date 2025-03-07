@@ -5,13 +5,13 @@ const SearchBar = () => {
     <>
     <main>
 
-    <form className=" lg:hidden mb-20 my-30">
+    {/* <form className=" lg:hidden mb-20 my-30">
               <input
                 type="text"
                 className="w-full h-[60px] rounded-[32px] pl-6  border font-[400] text-[#100101] bg-[#F0F0F0]"
                 placeholder="Search"
               />
-            </form>
+            </form> */}
     
             <div>
             <div className="carousel rounded-box w-96 lg:hidden md:none">

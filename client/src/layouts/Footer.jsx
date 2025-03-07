@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex space-x-6 text-sm">
+        <nav className="flex space-x-6 text-[13px]">
           <a href="#" className="hover:underline">About</a>
           <a href="#" className="hover:underline">Products</a>
           <a href="#" className="hover:underline">Support</a>
@@ -40,9 +40,9 @@ const Footer = () => {
       <hr className="border-white my-4 mx-auto md:w-6/8" />
 
       {/* Footer Bottom */}
-      <div className="container mx-auto flex flex-col md:flex-row justify-between text-m px-6">
-        <p className='md:ml-27'>TM & Copyright 2025 Jazzy Corporation. All Rights Reserved.</p>
-        <a href="#" className="hover:underline md:mr-27">Privacy Policy</a>
+      <div className="container mx-auto flex flex-col md:flex-row px-7 md:text-sm" >
+        <p className='md:ml-27  ml-3'>TM & Copyright 2025 Jazzy Corporation. All Rights Reserved.</p>
+        <a href="#" className="hover:underline md:mr-27 md:ml-130 ml-3">Privacy Policy</a>
       </div>
     </footer>
   );

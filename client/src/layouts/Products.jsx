@@ -24,7 +24,7 @@ const Products = () => {
           <p className="text-[#B67B0F]">&#8358;{burger.price}</p>
           <p className='text-[#FBFBFB] text-[12px] pl-3'>{burger.duration}</p>
           </div>
-          <button className="bg-[#B67B0F] text-[#FBFBFB] w-80 md:w-75 h-8 rounded-2xl">Add to Cart</button>
+          <button className="bg-[#B67B0F] text-[#FBFBFB] w-80 md:w-75 h-10 rounded-3xl">Add to Cart</button>
           
         </div>
       ))}
