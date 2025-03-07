@@ -4,10 +4,18 @@ const SearchBar = () => {
   return (
     <>
     <main>
+
+    <form className=" lg:hidden mb-20 my-30">
+              <input
+                type="text"
+                className="w-full h-[60px] rounded-[32px] pl-6  border font-[400] text-[#100101] bg-[#F0F0F0]"
+                placeholder="Search"
+              />
+            </form>
     
             <div>
             <div className="carousel carousel-center bg-neutral rounded-box max-w-md space-x-4 p-4 md:hidden">
-  
+      
   
   <div className="carousel-item lg:hidden">
     <img
@@ -37,13 +45,7 @@ const SearchBar = () => {
 </div>
             </div>
 
-            <form className=" lg:hidden mb-20 my-30">
-              <input
-                type="text"
-                className="w-full h-[60px] rounded-[32px] pl-6  border font-[400] text-[#100101] bg-[#F0F0F0]"
-                placeholder="Search"
-              />
-            </form>
+            
     </main>
     </>
   )

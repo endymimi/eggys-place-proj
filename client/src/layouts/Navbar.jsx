@@ -3,11 +3,9 @@ import navLogo from "../assets/eggysPlaceBurger.png";
 import location from "../assets/location.png";
 import dropdownIcon from "../assets/dropDownIcon.svg";
 import cartImg from "../assets/cartImg.png";
-import hIcon from "../assets/Huge-icon (2).png";
 import loginImg from "../assets/login icon.png";
 import { useState } from "react";
 import dropupIcon from "../assets/arrow up.png";
-import Hero from "./Hero";
 
 
 const Navbar = () => {
