@@ -14,21 +14,21 @@ const SearchBar = () => {
             </form> */}
     
             <div>
-            <div className="carousel rounded-box w-96 lg:hidden md:none">
+            <div className="carousel rounded-box w-96 hidden md:none">
   <div className="carousel-item w-1/2">
     <img
       src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/burger_xepnzf.svg"
-      className="w-full" />
+      className="w-[140px]" />
   </div>
   <div className="carousel-item w-1/2">
     <img
       src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/combos_we0lfx.svg"
-      className="w-full" />
+      className="w-[120px]" />
   </div>
   <div className="carousel-item w-1/2">
     <img
       src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/drinks_wco1co.svg"
-      className="w-full" />
+      className="w-[120px]" />
   </div>
   <div className="carousel-item w-1/2">
     <img

@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="bg-[#100101] text-white md:py-6 py-4 ">
       <div className="container mx-auto flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0 px-6">
         <div>
-          <img className='md:ml-27 mt-12 md:mb-6'  src={footerImg} alt="footerImg" />
+          <img className='md:ml-27 mt-12 md:mb-6 w-40'  src={footerImg} alt="footerImg" />
         </div>
         
         {/* Logo */}
@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex space-x-6 text-[13px]">
+        <nav className="flex space-x-6 text-[12px]">
           <a href="#" className="hover:underline">About</a>
           <a href="#" className="hover:underline">Products</a>
           <a href="#" className="hover:underline">Support</a>

@@ -14,8 +14,8 @@ const Hero = () => {
     
     </div>
     <div className='container mx-auto justify-center items-center my-35 md:my-55 md:ml-7 md:gap-6 gap-2 flex'>
-    <button className='  md:block btn bg-[#B67B0F] rounded-[31px] text-[#F0F0F0] w-45 h-14'>Order Now!</button>
-    <button className='  md:block btn bg-[#FBFBFB] rounded-[32px] text-[#100101] w-40 h-15'>View Menu</button>
+    <button className='  md:block btn bg-[#B67B0F] rounded-[31px] text-[#F0F0F0] md:w-55 md:h-17 w-45 h-14'>Order Now!</button>
+    <button className='  md:block btn bg-[#FBFBFB] rounded-[32px] text-[#100101] md:w-55 w-40 md:h-17 h-15'>View Menu</button>
     </div>
     
             
