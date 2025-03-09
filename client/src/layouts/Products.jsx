@@ -6,6 +6,7 @@ import {
   chickens,
   chips,
   salad,
+  allProducts,
 } from "../product";
 
 const Products = () => {
