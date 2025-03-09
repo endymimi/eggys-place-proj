@@ -12,119 +12,172 @@ import beninIcon from "../assets/BENIN.jpeg";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-
-
-
+import SignIn from "../utils/SignIn";
 
 const Navbar = () => {
- const [dropDown, setDropDown] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState("Location")
-  const [showLocationIcon, setShowLocationIcon] = useState(false);
-  const locationRef = useRef(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState("Location");
+  // const [showLocationIcon, setShowLocationIcon] = useState(false);
+  // const locationRef = useRef(null);
 
-  const locationIcons = {
-    
-      Lagos: lagosIcon,
-      Abuja: abujaIcon,
-      Benin: beninIcon,
-    };
-    
-    console.log("Selected Location:", selectedLocation);
-    
-   
+  const handleSelectedLocation = (event) => {
+    setSelectedLocation(event.target.value)
+  }
 
+  console.log("Selected Location:", selectedLocation);
 
   return (
     <>
       <header className="bg-[#100101] ">
         <nav className=" wrapper flex justify-between items-center ">
-        
-      
-          <div className="flex gap-4 items-center ">
-            <img className=" md:w-[100px] w-[80px] h-auto" src={navLogo} alt="nav-logo" />
+          <div to="/" className="flex gap-4 items-center ">
             <img
-              className=" md:w-7 h-auto w-10"
+              className=" md:w-[100px] w-[80px] h-auto"
+              src={navLogo}
+              alt="nav-logo"
+            />
+          </div>
+          {/* div for location */}
+          <div
+        className="dropdown dropdown-center "
+        tabIndex={0}
+        role="button"
+        onClick={() => setIsClicked(isClicked)}
+      >
+        <form>
+          <div className="flex items-center bg-transparent ">
+            <img
+              className="w-auto h-auto pr-2"
               src={location}
-              alt="location-icon" onClick={() => setShowLocationIcon(false)} // Switch to text on click
-              />
-            
-            <h2 className="text-[#F0F0F0] text-[20px]  hidden md:block font-[500]"  onClick={() => setShowLocationIcon(true)}>
+              alt="location icon"
+            />
+            <h4 className="text-[#F0F0F0] text-[13px] md:text-[12px] font-[500]">
               {selectedLocation}
-            </h2>
-            <div className="dropdown dropdown-center">
-              <div tabIndex={0} role="button" className=" m-1 bg-transparent">
-                <button  onClick={() => setDropDown(dropDown)}>
-                  <img src={dropDown ? dropupIcon : dropdownIcon}  alt="toggle dropup" className=" md:mt-3 mt-3 w-10" /></button>
-                
-              </div>
-             
+            </h4>
+            <div role="button" className="bg-transparent m-1" tabIndex={0}>
+              <img
+                src={dropdownIcon}
+                alt="drop-down-img"
+                className="cursor-pointer w-full "
+              />
+
               <ul
                 tabIndex={0}
-                className=" absolute  dropdown-content menu bg-[#F0F0F0] rounded-box z-10 w-45 p-2 shadow-sm"
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-auto p-2 shadow-sm"
               >
-                {["Lagos", "Abuja", "Benin"].map((Location) => (
-                  <li key={Location} className="hover:bg-gray-200 px-3 py-2 rounded-md flex items-center gap-2">
+                <li className="hover:text-red-600">
+                  <label id="location1">
+                    Lagos{" "}
                     <input
                       type="radio"
                       name="location"
-                      value={location}
-                      checked={selectedLocation === Location}
-                      onChange={() => {
-                        setSelectedLocation(Location);
-                        setIsOpen(false); // Close dropdown after selection
-                      }}
-                      className="hidden"
-                      id={Location}
+                      value="Lagos"
+                      id="location1"
+                      onChange={handleSelectedLocation}
                     />
-                    <label htmlFor={Location} className="cursor-pointer flex items-center gap-2">
-                      <img src={locationIcons[Location]} alt={`${Location}-icon`} className="w-5 h-5" />
-                      {Location}
-                    </label>
-                  </li>
-                ))}
+                  </label>
+                </li>
+                <li className="hover:text-red-600">
+                  <label className="" id="location2">
+                    Abuja{" "}
+                    <input
+                      type="radio"
+                      name="location"
+                      value="Abuja"
+                      id="location2"
+                      onChange={handleSelectedLocation}
+                    />
+                  </label>
+                </li>
+                <li className="hover:text-red-600">
+                  <label id="location3">
+                    Benin{" "}
+                    <input
+                      type="radio"
+                      name="location"
+                      value="Benin"
+                      id="location3"
+                      onChange={handleSelectedLocation}
+                    />
+                  </label>
+                </li>
               </ul>
-            
-              
-              
             </div>
-            {/* <img src={dropdown} alt="dropdown" /> */}
           </div>
-          <div className="flex gap-8">
-            <form className="">
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+          
+         
+      
+
+          {/* div for form search input  */}
+          <div className="hidden lg:block">
+            {/* form input for search bar  */}
+            <form>
               <input
                 type="text"
-                className="w-[300px] h-[45px]  hidden lg:block rounded-[32px] ps-[30px] border font-[400] text-[#100101] bg-[#F0F0F0] ml-12 my-10"
+                name=""
+                id=""
                 placeholder="Search"
+                className="w-[300px] h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
               />
+              {/* <img className='ab' src={searchBar} alt="" /> */}
             </form>
-            <div className="flex">
-              <h2 className="text-[#F0F0F0] my-13  mr-10 text-[20px] font-[500] whitespace-nowrap hidden md:block">
-                All Products
-              </h2>
+          </div>
 
-              <div className="flex gap-3 ">
-                <button className="bg-[#B67B0F] text-white font-medium rounded-full md:rounded-full md:w-25 md:h-10 w-20 h-15  items-center flex gap-1 my-10">
+          {/* div for All products  */}
+          <div className="flex gap-4 items-center">
+            <h2 className="font-[500] text-[13px] md:ml-4 text-[#FBFBFB] hidden md:block">
+              All Products
+            </h2>
+            {/* Ul for cart and login section */}
+            <ul className="flex gap-[28px]">
+              <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
+                <img className="md:w-10  w-15" src={cartImg} alt="cartLogo" />
+                <Link>
+                  {" "}
+                  <span className="hidden md:inline-block ">Cart</span> 01{" "}
+                </Link>
+              </li>
+              <li>
+                {/* You can open the modal using document.getElementById('ID').showModal() method */}
+                <button
+                  className="btn flex gap-2 bg-white md:rounded-[32px] rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px]"
+                  onClick={() =>
+                    document.getElementById("my_modal_3").showModal()
+                  }
+                >
                   <img
-                    className=" w-30 font-bold ml-3"
-                    src={cartImg}
-                    alt="cart"
-                  />
-                  <span className="hidden lg:inline-block ">Cart</span>{" "}
-                  <span className="pr-6 md:pr-5 text-[18px]">20</span>
-                </button>
-                <button className="bg-[#F0F0F0] font-medium md:rounded-full rounded-full md:w-25 w-17 h-14 md:h-10  items-center flex gap-1 my-11">
-                  <img
-                    className=" text-[#100101] pl-2 w-15 md:w-10"
+                    className="md:w-20 w-15"
                     src={loginImg}
-                    alt="login-icon"
+                    alt="loginLogo"
                   />
-                 <Link to="/signin"> <span className="hidden md:block">Login</span></Link>
+                  <span className="hidden md:inline-block ">Login</span>
                 </button>
-                <div>
-                
-                </div>
-              </div>
-            </div>
+                <dialog id="my_modal_3" className="modal">
+                  <div className="modal-box bg-black w-screen max-w-5xl">
+                    <form method="dialog">
+                      {/* if there is a button in form, it will close the modal */}
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 text-white top-2">
+                        ✕
+                      </button>
+                    </form>
+                    <SignIn />
+                  </div>
+                </dialog>
+              </li>
+            </ul>
           </div>
         </nav>
       </header>

@@ -15,7 +15,7 @@ const Home = () => {
         </div>
         
         <div>
-         <BurgerSession/> 
+         {/* <BurgerSession/>  */}
         </div>
         <div>
           <Products/>
