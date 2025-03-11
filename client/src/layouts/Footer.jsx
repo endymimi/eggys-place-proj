@@ -1,9 +1,9 @@
 import React from 'react';
-import facebook from "../assets/facebook.svg";
-import twitter from "../assets/twitter.gif";
-import twit from "../assets/xtwit.svg";
-import youtube from "../assets/youtube.svg";
-import instag from "../assets/instagramendy.svg";
+import facebook from "../assets/new facebook.svg";
+import twitter from "../assets/new twitter.svg";
+import twit from "../assets/newx.svg";
+import youtube from "../assets/new youtube.svg";
+import instag from "../assets/new instag.svg";
 import footerImg from "../assets/footerIcon.svg";
 
 const Footer = () => {
@@ -14,10 +14,7 @@ const Footer = () => {
           <img className='md:ml-27 mt-12 md:mb-6 w-40'  src={footerImg} alt="footerImg" />
         </div>
         
-        {/* Logo */}
-        <div className="flex items-center space-x-4">
-          <img src={twit} alt="Twitter Logo" className="h-10" />
-        </div>
+        
 
         {/* Navigation Links */}
         <nav className="flex space-x-6 text-[12px]">
@@ -29,10 +26,12 @@ const Footer = () => {
 
         {/* Social Media Icons (Only Images) */}
         <div className="flex space-x-4 md:mr-27">
-          <a href="#" className="hover:opacity-80"><img src={facebook} alt="Facebook" className="h-6 w-6 bg-white" /></a>
-          <a href="#" className="hover:opacity-80"><img src={twitter} alt="Twitter" className="h-6 w-6 text-white" /></a>
-          <a href="#" className="hover:opacity-80"><img src={youtube} alt="YouTube" className="h-6 w-6 bg-white" /></a>
-          <a href="#" className="hover:opacity-80"><img src={instag} alt="Instagram" className="h-6 w-6 bg-white" /></a>
+          <a href="#" className="hover:opacity-80"><img src={facebook} alt="Facebook" className="h-6 w-6 " /></a>
+          <a href="#" className="hover:opacity-80"><img src={twitter} alt="Twitter" className="h-6 w-6 " /></a>
+          <a href="#" className="hover:opacity-80"><img src={youtube} alt="YouTube" className="h-6 w-6 " /></a>
+          <a href="#" className="hover:opacity-80"><img src={instag} alt="Instagram" className="h-6 w-6 " /></a>
+          <a href="#" className="hover:opacity-80"><img src={twit} alt="Instagram" className="h-6 w-6 " /></a>
+          
         </div>
       </div>
 

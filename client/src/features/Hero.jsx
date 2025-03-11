@@ -14,6 +14,21 @@ const Hero = () => {
           
           
           <div className="p-2 lg:p-0 ">
+            
+            
+            <div className='md:hidden'>
+              <form>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Search for your favorite..."
+                className="w-[350px] mb-20 h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
+              />
+              {/* <img className='ab' src={searchBar} alt="" /> */}
+            </form>
+            </div>
+
            
           <div className="p-2 lg:p-0">
             <h1 className="text-white whitespace-pre-wrap  md:mx- lg:text-[56px] text-[50px] font-[500] lg:tracking-[7%] md:leading-[74.09px]">

@@ -62,7 +62,7 @@ const Navbar = () => {
 
               <ul
                 tabIndex={0}
-                className="dropdown-content menu bg-base-100 rounded-box z-1 w-auto p-2 shadow-sm"
+                className=" hidden md:block dropdown-content menu bg-base-100 rounded-box z-1 w-auto p-2 shadow-sm"
               >
                 <li className="hover:text-red-600">
                   <label id="location1">
@@ -107,7 +107,7 @@ const Navbar = () => {
       </div>
 
           {/* div for form search input  */}
-          <div className="hidden lg:block">
+          <div className=" hidden lg:block">
             {/* form input for search bar  */}
             <form>
               <input
@@ -115,10 +115,11 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="Search"
-                className="w-[300px] h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
+                className="w-[230px]  h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
               />
               {/* <img className='ab' src={searchBar} alt="" /> */}
             </form>
+           
           </div>
 
           {/* div for All products  */}
@@ -130,8 +131,8 @@ const Navbar = () => {
             <ul className="flex gap-[28px]">
               <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
                 <img className="md:w-10  w-15" src={cartImg} alt="cartLogo" />
-                <Link>
-                  {" "}
+                <Link to="../pages/Cart">
+                  
                   <span className="hidden md:inline-block ">Cart</span> 01{" "}
                 </Link>
               </li>
