@@ -23,7 +23,7 @@ const Hero = () => {
                 name=""
                 id=""
                 placeholder="Search for your favorite..."
-                className="w-[350px] mb-20 h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
+                className="w-[270px] mb-20 h-[50px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
               />
               {/* <img className='ab' src={searchBar} alt="" /> */}
             </form>

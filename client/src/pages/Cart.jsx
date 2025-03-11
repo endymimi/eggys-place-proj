@@ -1,4 +1,5 @@
 import React from 'react'
+import deleteIcon from "../assets/vector delete.svg";
 import {
   burgers,
   Combos,
@@ -16,12 +17,13 @@ const Cart = () => {
       <article className='wrapper'>
 
       {/* SECTION FOR CART PAGE  */}
-      <section className='grid lg:grid-cols-3 gap-[20px]'>
+      <section className='grid lg:grid-cols-3 gap-[20px] p-4'>
         {/* div for cart  */}
-        <div className='col-span-2 bg-black'>
-          <h2 className='text-white border-b-[2px] border-b-white text-[24px] leading-[100%]'>Cart 2</h2>
-
+        <div className='col-span-2 bg-black py-4 rounded-[10px] p-[15px]'>
+          <h2 className='text-white border-b-[2px] border-b-white text-[24px] leading-[100%] p-[7px]'>Cart 2</h2>  
         </div>
+        
+
         {/* div for summary */}
         <div className='bg-black p-[15px] gap-[15px] rounded-[10px]'>
           <h2 className='text-[24px] leading-[100%] text-white py-4'>Summary</h2>
