@@ -15,8 +15,8 @@ const Products = () => {
   return (
     <>
       {/* Product Section */}
-      <section className="flex justify-between w-full rounded-[101px] bg-[#252422] p-6">
-        <div className="carousel carousel-center lg:w-full space-x-24 px-8">
+      <section className="  flex justify-between w-full rounded-[101px] bg-[#252422] p-6">
+        <div className=" carousel carousel-center lg:w-full space-x-24 px-8">
           <a
             onClick={() => setSelectedCategory(burgers)}
             href="#burger"

@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
     
         <div className="hidden lg:flex gap-[12px]">
-            <button className="bg-[#B67B0F] rounded-[31px] py-[15px] text-white px-[56px] text-[20px] leading-[26.46px]">
+            <button className="bg-[#B67B0F] rounded-[31px] py-[15px] text-black px-[56px] text-[20px] leading-[26.46px]">
               Order Now!
             </button>
             <button className="bg-[#FBFBFB] rounded-[32px] py-[15px] px-[20px] leading-[26.46px] text-[20px] font-[500]">

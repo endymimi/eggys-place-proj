@@ -22,6 +22,6 @@ body {
 }
 
 .wrapper{
-  @apply container mx-auto px-[20px] md:px-[80px] py-[10px] lg:px-[130px] lg:py-[16px] 
+  @apply container mx-auto px-[20px] md:px-[80px] py-[10px] lg:px-[100px] lg:py-[16px] 
 }
 

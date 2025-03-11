@@ -1,22 +1,21 @@
 import React from "react";
 import navLogo from "../assets/eggysPlaceBurger.png";
 import location from "../assets/location.png";
-import dropdownIcon from "../assets/dropDownIcon.svg";
 import cartImg from "../assets/cartImg.png";
 import loginImg from "../assets/login icon.png";
 import { useState } from "react";
-import dropupIcon from "../assets/arrow up.png";
-import lagosIcon from "../assets/LAGOS.jpeg";
-import abujaIcon from "../assets/ABUJA.jpeg";
-import beninIcon from "../assets/BENIN.jpeg";
 import { useEffect } from "react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import SignIn from "../utils/SignIn";
+import searchIcon from "../assets/icon search.svg";
+import Cart from "../pages/Cart";
+import SignInOut from "../Btn/SignInOut";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("Location");
+  const [IsSignInOutOpen, setIsSignInOutOpen] = useState(false)
+  
   // const [showLocationIcon, setShowLocationIcon] = useState(false);
   // const locationRef = useRef(null);
 
@@ -32,7 +31,7 @@ const Navbar = () => {
         <nav className=" wrapper flex justify-between items-center ">
           <div to="/" className="flex gap-4 items-center ">
             <img
-              className=" md:w-[100px] w-[80px] h-auto"
+              className=" md:w-[70px] w-[55px] h-auto md:mx-10"
               src={navLogo}
               alt="nav-logo"
             />
@@ -47,7 +46,7 @@ const Navbar = () => {
         <form>
           <div className="flex items-center bg-transparent ">
             <img
-              className="w-auto h-auto pr-2"
+              className="w-auto h-auto pr-2 hidden md:block"
               src={location}
               alt="location icon"
             />
@@ -56,9 +55,9 @@ const Navbar = () => {
             </h4>
             <div role="button" className="bg-transparent m-1" tabIndex={0}>
               <img
-                src={dropdownIcon}
+                src={searchIcon}
                 alt="drop-down-img"
-                className="cursor-pointer w-full "
+                className="cursor-pointer w-full md:hidden  "
               />
 
               <ul
@@ -107,20 +106,6 @@ const Navbar = () => {
         </form>
       </div>
 
-
-
-
-
-
-
-
-
-
-
-          
-         
-      
-
           {/* div for form search input  */}
           <div className="hidden lg:block">
             {/* form input for search bar  */}
@@ -138,9 +123,9 @@ const Navbar = () => {
 
           {/* div for All products  */}
           <div className="flex gap-4 items-center">
-            <h2 className="font-[500] text-[13px] md:ml-4 text-[#FBFBFB] hidden md:block">
+            {/* <h2 className="font-[500] text-[13px] md:ml-4 text-[#FBFBFB] hidden md:block">
               All Products
-            </h2>
+            </h2> */}
             {/* Ul for cart and login section */}
             <ul className="flex gap-[28px]">
               <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
@@ -154,8 +139,7 @@ const Navbar = () => {
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 <button
                   className="btn flex gap-2 bg-white md:rounded-[32px] rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px]"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
+                  onClick={() => setIsSignInOutOpen(true)
                   }
                 >
                   <img
@@ -165,22 +149,12 @@ const Navbar = () => {
                   />
                   <span className="hidden md:inline-block ">Login</span>
                 </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="modal-box bg-black w-screen max-w-5xl">
-                    <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 text-white top-2">
-                        ✕
-                      </button>
-                    </form>
-                    <SignIn />
-                  </div>
-                </dialog>
               </li>
             </ul>
           </div>
         </nav>
       </header>
+      <SignInOut isOpen={IsSignInOutOpen} onClose={()=> setIsSignInOutOpen(false)} />
     </>
   );
 };

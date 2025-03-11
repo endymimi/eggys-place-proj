@@ -1,10 +1,13 @@
 import React from 'react'
 import { allSections } from '../burgersession';
+import { burgers, Combos, drinks, chickens, chips, salad } from '../product';
 import { useState } from 'react';
 
 
 const BurgerSession = () => {
     const [selected, setSelected] = useState(1);
+
+    
 
    
     
@@ -12,7 +15,7 @@ const BurgerSession = () => {
     <>
     <main className='py-7 ' >
         <section className='container mx-auto '>
-    <div className=" bg-[#1a1a1a] p-7  md:rounded-full  flex justify-between space-x-6">
+    <div className="  p-7  md:rounded-full  flex justify-between space-x-6">
       {allSections.map((allSection) => (
         <div
           key={allSection._id}
@@ -25,7 +28,7 @@ const BurgerSession = () => {
           <img
             src={allSection.image}
             alt={allSection.title}
-            className="hidden  md:block w-20 h-20 object-contain"
+            className="hidden  md:block w-20 h-20 object-contain "
           />
           <span
             className={`hidden  md:block mt-2 md:text-sm  ${
