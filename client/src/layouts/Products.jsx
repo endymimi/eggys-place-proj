@@ -5,7 +5,7 @@ import {
   drinks,
   chickens,
   chips,
-  salad,
+  salads,
   allProducts,
 } from "../product";
 
@@ -15,7 +15,7 @@ const Products = () => {
   return (
     <>
       {/* Product Section */}
-      <section className="  flex justify-between w-full rounded-[101px] bg-[#252422] p-6">
+      <section className="  flex justify-between w-full rounded-[101px] bg-[#252422] my-9 p-6">
         <div className=" carousel carousel-center flex lg:w-full space-x-24 px-8">
           <a
             onClick={() => setSelectedCategory(burgers)}
@@ -73,7 +73,7 @@ const Products = () => {
             <p>Chips</p>
           </a>
           <a
-            onClick={() => setSelectedCategory(salad)}
+            onClick={() => setSelectedCategory(salads)}
             href="#salads"
             className="carousel-item flex flex-col items-center text-[25px] text-[#aeaea7] hover:text-white opacity-70 hover:opacity-100"
           >

@@ -6,7 +6,7 @@ import {
   drinks,
   chickens,
   chips,
-  salad,
+  salads,
   allProducts,
 } from "../product";
 
@@ -20,8 +20,49 @@ const Cart = () => {
       <section className='grid lg:grid-cols-3 gap-[20px] p-4'>
         {/* div for cart  */}
         <div className='col-span-2 bg-black py-4 rounded-[10px] p-[15px]'>
-          <h2 className='text-white border-b-[2px] border-b-white text-[24px] leading-[100%] p-[7px]'>Cart 2</h2>  
+          <h2 className='text-white border-b-[2px] border-b-white text-[24px] leading-[100%] p-[7px]'>Cart 2</h2>
+
+          <div>{salads.slice(2, 5).map((salad) => { const{ _id, image, title, description, ratingicon, rating, price, duration
+}= salad;
+       return(
+        <div key={salad._id}>
+    <div className="card bg-[#2F2F2F] w-full shadow-sm ">
+      <div className='flex'>
+      <figure>
+    <img className='w-auto'
+      src={image}
+      alt={title}/>
+  </figure>
+  <div className="card-body">
+    <h2 className="card-title text-[18px] text-white">{title}</h2>
+    <p className='text-white'>14/01/2025</p>
+    <p className='text-[#B67B0F] text-[18px]'>&#8358; 20,000</p>
+      </div>
+    <div className="card-actions  flex flex-col justify-between">
+      {/* div for delete button */}
+      <div className='flex justify-end pt-3'><img src={deleteIcon} alt="delete" /></div>
+      {/* div for quantity */}
+      <div className='flex'>
+
+      <button className="btn btn-primary bg-[#B67B0F] rounded-full">+</button>
+      <span className='px-4 text-white'>1</span>
+      <button className="btn btn-primary bg-[#B67B0F] rounded-full">-</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+)})}
         </div>
+          
+
+        </div>
+       
+
+
+       
+        {/* </div> */}
         
 
         {/* div for summary */}

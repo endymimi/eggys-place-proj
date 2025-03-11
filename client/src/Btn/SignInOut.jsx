@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import navlogo from "../assets/eggysPlaceBurger.png";
+import visible from "../assets/visibility_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+import visibleOff from "../assets/visibility_off_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
 
 const SignInOut = ({ isOpen, onClose }) => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -16,6 +18,9 @@ const SignInOut = ({ isOpen, onClose }) => {
   };
 
   if (!isOpen) return null;
+
+  const [showPassword, setShowPassword] = useState(false);
+
 
   return (
     <div className="fixed inset-0 bg-[100101] bg-opacity-50 flex items-center justify-center z-50">
@@ -35,7 +40,7 @@ const SignInOut = ({ isOpen, onClose }) => {
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           {isSignUp && (
-            <div>
+            <div className="relative">
               <input
                 type="text"
                 placeholder="Full Name"
@@ -43,6 +48,18 @@ const SignInOut = ({ isOpen, onClose }) => {
                 {...register("fullName", { required: "Full Name is required" })}
               />
               {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
+
+              <button
+                  type="button"
+                  className="absolute right-3 top-36 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)} // Toggle state
+                >
+                  <img
+                    src={showPassword ? visibleOff : visible} // Change icon
+                    alt="Toggle Visibility"
+                    className="w-12 h-8 transition-opacity duration-200"
+                  />
+                </button>
             </div>
           )}
           <div>
@@ -60,7 +77,7 @@ const SignInOut = ({ isOpen, onClose }) => {
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
-          <div>
+          <div className="relative">
             <input
               type="password"
               placeholder="Password"
@@ -74,6 +91,17 @@ const SignInOut = ({ isOpen, onClose }) => {
               })}
             />
             {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+            <button
+                  type="button"
+                  className="absolute right-3 top-3 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)} // Toggle state
+                >
+                  <img
+                    src={showPassword ? visibleOff : visible} // Change icon
+                    alt="Toggle Visibility"
+                    className="w-12 h-8 transition-opacity duration-200"
+                  />
+                </button>
           </div>
           {isSignUp && (
             <div>
@@ -87,6 +115,8 @@ const SignInOut = ({ isOpen, onClose }) => {
                 })}
               />
               {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword.message}</p>}
+
+
             </div>
           )}
           {isSignUp && (

@@ -363,7 +363,7 @@ export const Combos =
   },
  ]
 
- export const salad =
+ export const salads =
  [
   {
     _id: 1,

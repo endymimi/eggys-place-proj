@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchBar from '../utils/SearchBar'
-import BurgerSession from '../layouts/BurgerSession'
+// import BurgerSession from '../layouts/BurgerSession'
 import Products from '../layouts/Products'
 import Hero from "../features/Hero"
 

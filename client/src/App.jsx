@@ -7,6 +7,7 @@ import Navbar from "./layouts/Navbar";
 import Footer from "./layouts/Footer";
 import LoadingRing  from "./utils/Loader";
 import Cart from "./pages/Cart";
+import BurgerDescription from "./describe/BurgerDescription";
 
 
 
@@ -30,7 +31,8 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="" element={<Cart />} />
+            <Route path="./pages/Cart" element={<Cart />} />
+            <Route path="./describe/BurgerDescription" element={<BurgerDescription />} />
             </Routes>
           <Footer />
         </Suspense>
