@@ -16,11 +16,11 @@ const Products = () => {
     <>
       {/* Product Section */}
       <section className="  flex justify-between w-full rounded-[101px] bg-[#252422] p-6">
-        <div className=" carousel carousel-center lg:w-full space-x-24 px-8">
+        <div className=" carousel carousel-center flex lg:w-full space-x-24 px-8">
           <a
             onClick={() => setSelectedCategory(burgers)}
             href="#burger"
-            className="carousel-item flex flex-col items-center text-[25px] text-[#aeaea7] hover:text-white opacity-70 hover:opacity-100"
+            className="carousel-item flex flex-col items-center text-[25px] text-[#aeaea7] hover:text-white  hover:opacity-100"
           >
             <img
               src="https://res.cloudinary.com/diww44oar/image/upload/v1741223929/burger_xepnzf.svg"
@@ -83,6 +83,7 @@ const Products = () => {
             />
             <p>Salads</p>
           </a>
+          
         </div>
       </section>
 

@@ -13,7 +13,7 @@ const BurgerSession = () => {
     
   return (
     <>
-    <main className='py-7 ' >
+    <main className='py-7 hidden' >
         <section className='container mx-auto '>
     <div className="  p-7  md:rounded-full  flex justify-between space-x-6">
       {allSections.map((allSection) => (
