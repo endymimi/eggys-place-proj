@@ -6,6 +6,7 @@ import visibleOff from "../assets/visibility_off_24dp_5F6368_FILL0_wght400_GRAD0
 
 const SignInOut = ({ isOpen, onClose }) => {
   const [isSignUp, setIsSignUp] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -19,7 +20,6 @@ const SignInOut = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const [showPassword, setShowPassword] = useState(false);
 
 
   return (
@@ -79,7 +79,7 @@ const SignInOut = ({ isOpen, onClose }) => {
           </div>
           <div className="relative">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Password"
               className="w-full p-3 rounded-md bg-gray-800 placeholder-gray-400 border border-gray-600"
               {...register("password", {

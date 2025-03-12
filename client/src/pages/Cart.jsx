@@ -10,17 +10,23 @@ import {
   allProducts,
 } from "../product";
 
-const Cart = () => {
+const Cart = (cart,setCart) => {
+  console.log(cart);
+  function handleRemove(cartId){
+   let remove = cart.filter((cartItx)=> cartItx._id !==cartId)
+        setCart(remove)
+  }
+  
   return (
     <>
-     <main className='bg-[#2F2F2F] '>
+    {cart.length === 0 ?<h1>No item</h1>  : <main className='bg-[#252422] '>
       <article className='wrapper'>
 
       {/* SECTION FOR CART PAGE  */}
       <section className='grid lg:grid-cols-3 gap-[20px] p-4'>
         {/* div for cart  */}
         <div className='col-span-2 bg-black py-4 rounded-[10px] p-[15px]'>
-          <h2 className='text-white border-b-[2px] border-b-white text-[24px] leading-[100%] p-[7px]'>Cart 2</h2>
+          <h2 className='text-white border-b-[2px] cursor-pointer border-b-white text-[24px] leading-[100%] p-[7px]'>Cart 2</h2>
 
           <div>{salads.slice(2, 5).map((salad) => { const{ _id, image, title, description, ratingicon, rating, price, duration
 }= salad;
@@ -40,7 +46,7 @@ const Cart = () => {
       </div>
     <div className="card-actions  flex flex-col justify-between">
       {/* div for delete button */}
-      <div className='flex justify-end pt-3'><img src={deleteIcon} alt="delete" /></div>
+      <div className=' cursor-pointer flex justify-end pt-3'><img onClick={ ()=>handleRemove(_id)} src={deleteIcon} alt="delete" /></div>
       {/* div for quantity */}
       <div className='flex'>
 
@@ -120,7 +126,7 @@ const Cart = () => {
 
 return(
   <div key={burger._id}>
-            <div className="card bg-[#252422] w-full shadow-sm">
+            <div className="card bg-[#2F2F2F] w-full shadow-sm">
   <figure>
     <img
       src={image}
@@ -155,7 +161,8 @@ return(
       </section>
       </article>
 
-    </main>
+    </main> }
+     
       
       
     </>

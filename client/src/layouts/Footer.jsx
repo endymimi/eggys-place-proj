@@ -4,14 +4,14 @@ import twitter from "../assets/new twitter.svg";
 import twit from "../assets/newx.svg";
 import youtube from "../assets/new youtube.svg";
 import instag from "../assets/new instag.svg";
-import footerImg from "../assets/footerIcon.svg";
+import footerImg from "../assets/eggysPlaceBurger.png"
 
 const Footer = () => {
   return (
     <footer className="bg-[#100101] text-white md:py-6 py-4 ">
       <div className="container mx-auto flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0 px-6">
         <div>
-          <img className='md:ml-27 mt-12 md:mb-6 w-40'  src={footerImg} alt="footerImg" />
+          <img className='md:ml-27 mt-12 md:mb-6 w-20'  src={footerImg} alt="footerImg" />
         </div>
         
         
@@ -36,11 +36,11 @@ const Footer = () => {
       </div>
 
       {/* Divider Line */}
-      <hr className="border-white my-4 mx-auto md:w-6/8" />
+      <hr className="border-white my-4 mx-auto md:w-8/10" />
 
       {/* Footer Bottom */}
       <div className="container mx-auto flex flex-col md:flex-row px-7 md:text-sm" >
-        <p className='md:ml-27  ml-3'>TM & Copyright 2025 Jazzy Corporation. All Rights Reserved.</p>
+        <p className='md:ml-27  ml-3'>TM & Copyright 2025 Eggys Corporation. All Rights Reserved.</p>
         <a href="#" className="hover:underline md:mr-27 md:ml-130 ml-3">Privacy Policy</a>
       </div>
     </footer>

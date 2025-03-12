@@ -1,10 +1,9 @@
 import React from 'react'
 import SearchBar from '../utils/SearchBar'
-// import BurgerSession from '../layouts/BurgerSession'
 import Products from '../layouts/Products'
 import Hero from "../features/Hero"
 
-const Home = () => {
+const Home = ({handleAddToCart}) => {
 
   return (
    <>
@@ -22,7 +21,7 @@ const Home = () => {
          {/* <BurgerSession/>  */}
         </div>
         <div>
-          <Products/>
+          <Products handleAddToCart = {handleAddToCart}/>
         </div>
 
       </section>

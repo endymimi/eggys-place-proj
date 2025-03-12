@@ -4,14 +4,12 @@ import location from "../assets/location.png";
 import cartImg from "../assets/cartImg.png";
 import loginImg from "../assets/login icon.png";
 import { useState } from "react";
-import { useEffect } from "react";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../assets/icon search.svg";
 import Cart from "../pages/Cart";
 import SignInOut from "../Btn/SignInOut";
 
-const Navbar = () => {
+const Navbar = ({cart}) => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("Location");
   const [IsSignInOutOpen, setIsSignInOutOpen] = useState(false)
@@ -41,7 +39,7 @@ const Navbar = () => {
         className="dropdown dropdown-center "
         tabIndex={0}
         role="button"
-        onClick={() => setIsClicked(isClicked)}
+        onClick={() => setIsClicked(!isClicked)}
       >
         <form>
           <div className="flex items-center bg-transparent ">
@@ -132,9 +130,8 @@ const Navbar = () => {
             <ul className="flex gap-[28px]">
               <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
                 <img className="md:w-10  w-15" src={cartImg} alt="cartLogo" />
-                <Link to="../pages/Cart">
-                  
-                  <span className="hidden md:inline-block ">Cart</span> 01{" "}
+                <Link to="../Cart">
+                  <span className="hidden md:inline-block ">Cart</span> {cart.length}
                 </Link>
               </li>
               <li>
@@ -145,7 +142,7 @@ const Navbar = () => {
                   }
                 >
                   <img
-                    className="md:w-20 w-15"
+                    className=" w-18"
                     src={loginImg}
                     alt="loginLogo"
                   />

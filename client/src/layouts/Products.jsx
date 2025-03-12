@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { toast } from "sonner";
 import {
   burgers,
   Combos,
@@ -9,7 +12,7 @@ import {
   allProducts,
 } from "../product";
 
-const Products = () => {
+const Products = ({ handleAddToCart }) => {
   const [selectedCategorys, setSelectedCategory] = useState(burgers);
 
   return (
@@ -83,7 +86,6 @@ const Products = () => {
             />
             <p>Salads</p>
           </a>
-          
         </div>
       </section>
 
@@ -92,39 +94,48 @@ const Products = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-y-[54px] lg:gap-x-[15px] gap-[44.46px] md:w-full">
           {selectedCategorys.map((product) => {
             // Proper destructuring
-            const { _id, image, title, ratingicon, rating, price, duration } = product;
+            const { _id, image, title, ratingicon, rating, price, duration } =
+              product;
 
             return (
               <div key={_id} className="card-container">
                 <div className="card bg-[#252422] text-[#FBFBFB] p-3 w-full mx-auto shadow-sm">
-                  <figure>
-                    <img src={image} alt={title} className="product-image" />
-                  </figure>
-                   {/* card body div */}
-                   <div className="card-body">
+                  <Link to={`/products/${_id}`}>
+                    <figure>
+                      <img src={image} alt={title} className="product-image" />
+                    </figure>
+                  </Link>
+                  {/* card body div */}
+                  <div className="card-body">
                     {/* div  for title and rating icon  */}
-    <div className='flex justify-between'>
-
-<h2 className="card-title text-[20px] font-[500] leading-[100%]">{title}</h2>
-  <figure className='border-[1px] border-[#B67B0F] rounded-[6px] py-[6px] px-[4px]'>
-    <img src={ratingicon} alt="" />
-    <figcaption>{rating}</figcaption>
-  </figure>
-</div>
-  {/* div for price & and duration  */}
-  <div className='flex place-items-center justify-between'>
-      <h3 className='text-[#B67B0F] text-[31px] lg:whitespace-nowrap'><span className='text-[15px]'>&#8358;</span> {price}</h3>
-      <h5 className='text-[#FBFBFB] text-[16px] lg:whitespace-nowrap'>{duration}</h5>
-    </div>
-     {/* Add to Cart Div */}
-     <div className="card-actions justify-end">
-      <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base">Add to Cart</button>
-    </div>
-
-
-
-                   </div>
-                 
+                    <div className="flex justify-between">
+                      <h2 className="card-title text-[20px] font-[500] leading-[100%]">
+                        {title}
+                      </h2>
+                      <figure className="border-[1px] border-[#B67B0F] rounded-[6px] py-[6px] px-[4px]">
+                        <img src={ratingicon} alt="" />
+                        <figcaption>{rating}</figcaption>
+                      </figure>
+                    </div>
+                    {/* div for price & and duration  */}
+                    <div className="flex place-items-center justify-between">
+                      <h3 className="text-[#B67B0F] text-[31px] lg:whitespace-nowrap">
+                        <span className="text-[15px]">&#8358;</span> {price}
+                      </h3>
+                      <h5 className="text-[#FBFBFB] text-[16px] lg:whitespace-nowrap">
+                        {duration}
+                      </h5>
+                    </div>
+                    {/* Add to Cart Div */}
+                    <div className="card-actions justify-end">
+                      <button
+                        onClick={() => {handleAddToCart(product) , toast('My first toast') }}
+                        className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base cursor-pointer "
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
