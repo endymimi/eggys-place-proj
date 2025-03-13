@@ -6,7 +6,6 @@ import loginImg from "../assets/login icon.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../assets/icon search.svg";
-import Cart from "../pages/Cart";
 import SignInOut from "../Btn/SignInOut";
 
 const Navbar = ({cart}) => {
@@ -27,13 +26,15 @@ const Navbar = ({cart}) => {
     <>
       <header className="bg-[#100101] ">
         <nav className=" wrapper flex justify-between items-center ">
-          <div to="/" className="flex gap-4 items-center ">
-            <img
+          <Link to="/"  >
+          <div className="flex gap-4 items-center ">
+            <img 
               className=" md:w-[70px] w-[55px] h-auto md:mx-10"
               src={navLogo}
               alt="nav-logo"
             />
           </div>
+          </Link>
           {/* div for location */}
           <div
         className="dropdown dropdown-center "
@@ -130,7 +131,7 @@ const Navbar = ({cart}) => {
             <ul className="flex gap-[28px]">
               <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
                 <img className="md:w-10  w-15" src={cartImg} alt="cartLogo" />
-                <Link to="../Cart">
+                <Link to="Cart">
                   <span className="hidden md:inline-block ">Cart</span> {cart.length}
                 </Link>
               </li>

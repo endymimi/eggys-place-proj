@@ -61,7 +61,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home handleAddToCart = {handleAddToCart} />} />
             <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="./pages/Cart" element={<Cart cart={cart} setCart={setCart} />} />
+            <Route path="Cart" element={<Cart cart={cart} setCart={setCart} />} />
             
             
             </Routes>
