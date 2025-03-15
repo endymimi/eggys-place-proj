@@ -3,15 +3,20 @@ import navLogo from "../assets/eggysPlaceBurger.png";
 import location from "../assets/location.png";
 import cartImg from "../assets/cartImg.png";
 import loginImg from "../assets/login icon.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../assets/icon search.svg";
 import SignInOut from "../Btn/SignInOut";
+import CartContext from "../context/CartContext";
+import dropdown from "../assets/dropDownIcon.svg";
 
-const Navbar = ({cart}) => {
+
+const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("Location");
   const [IsSignInOutOpen, setIsSignInOutOpen] = useState(false)
+  const {cart} = useContext(CartContext)
+  const [isLoggedIn, setIsLoggedIn] = useState(!false);
   
   // const [showLocationIcon, setShowLocationIcon] = useState(false);
   // const locationRef = useRef(null);
@@ -29,7 +34,7 @@ const Navbar = ({cart}) => {
           <Link to="/"  >
           <div className="flex gap-4 items-center ">
             <img 
-              className=" md:w-[70px] w-[55px] h-auto md:mx-10"
+              className=" md:w-[70px] w-[55px] h-auto "
               src={navLogo}
               alt="nav-logo"
             />
@@ -135,8 +140,12 @@ const Navbar = ({cart}) => {
                   <span className="hidden md:inline-block ">Cart</span> {cart.length}
                 </Link>
               </li>
-              <li>
+              <li className="text-white">
+                
+                {isLoggedIn ? "Hi Eggys" : 
+                <Link>
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
+                
                 <button
                   className="btn flex gap-2 bg-white md:rounded-[32px] rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px]"
                   onClick={() => setIsSignInOutOpen(true)
@@ -146,15 +155,19 @@ const Navbar = ({cart}) => {
                     className=" w-18"
                     src={loginImg}
                     alt="loginLogo"
-                  />
+                  /> 
+                  
                   <span className="hidden md:inline-block ">Login</span>
+                <SignInOut isOpen={IsSignInOutOpen} onClose={()=> setIsSignInOutOpen(false)} />
                 </button>
+                  </Link>}
               </li>
             </ul>
           </div>
         </nav>
+        
       </header>
-      <SignInOut isOpen={IsSignInOutOpen} onClose={()=> setIsSignInOutOpen(false)} />
+      
     </>
   );
 };

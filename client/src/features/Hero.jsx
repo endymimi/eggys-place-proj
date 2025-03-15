@@ -31,7 +31,7 @@ const Hero = () => {
 
            
           <div className="p-2 lg:p-0">
-            <h1 className="text-white whitespace-pre-wrap  md:mx- lg:text-[56px] text-[50px] font-[500] lg:tracking-[7%] md:leading-[74.09px]">
+            <h1 className="text-white whitespace-pre-wrap animate__animated  animate__backInDown md:mx- lg:text-[56px] text-[50px] font-[500] lg:tracking-[7%] md:leading-[74.09px]">
               The{" "}
               <span className="text-[#B67B0F] font-[800] text-[56px] font-Rammetto md:leading-[94.58px] md:tracking-[7%]">
                 ZING

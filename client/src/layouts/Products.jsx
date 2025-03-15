@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext,  useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import CartContext from "../context/CartContext";
 import {
   burgers,
-  Combos,
+  combos,
   drinks,
   chickens,
   chips,
   salads,
-  allProducts,
+  
 } from "../product";
 
-const Products = ({ handleAddToCart }) => {
+const Products = () => {
   const [selectedCategorys, setSelectedCategory] = useState(burgers);
+  const {handleAddToCart} = useContext(CartContext)
+  
 
   return (
     <>
