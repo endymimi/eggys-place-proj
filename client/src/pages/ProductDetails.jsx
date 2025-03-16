@@ -37,7 +37,7 @@ const ProductDetails = () => {
                     <div className='my-26'>
                     <button
                         onClick={() => {handleAddToCart(product) , toast('My first toast') }}
-                        className=" bg-[#B67B0F] md:leading-[100%]  md:w-full   w-80 rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base cursor-pointer "
+                        className=" bg-[#B67B0F] md:leading-[100%]  md:w-95 lg:w-125   w-80 rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base cursor-pointer "
                       >
                         Add to Cart
                       </button>

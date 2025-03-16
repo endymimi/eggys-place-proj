@@ -9,6 +9,7 @@ import searchIcon from "../assets/icon search.svg";
 import SignInOut from "../Btn/SignInOut";
 import CartContext from "../context/CartContext";
 import dropdown from "../assets/dropDownIcon.svg";
+import helloIcon from "../assets/helloIcon.svg";
 
 
 const Navbar = () => {
@@ -133,6 +134,7 @@ const Navbar = () => {
               All Products
             </h2> */}
             {/* Ul for cart and login section */}
+           
             <ul className="flex gap-[28px]">
               <li className="flex gap-2 bg-[#B67B0F] md:rounded-[32px] md:ml-9 ml-4 rounded-full py-[15px] px-[20px] md:w-[142px] w-[80px] h-[50px] ">
                 <img className="md:w-10  w-15" src={cartImg} alt="cartLogo" />
@@ -140,10 +142,14 @@ const Navbar = () => {
                   <span className="hidden md:inline-block ">Cart</span> {cart.length}
                 </Link>
               </li>
+              
               <li className="text-white">
                 
                 {isLoggedIn ? "Hi Eggys" : 
+                
                 <Link>
+                
+               
                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
                 
                 <button
@@ -157,9 +163,11 @@ const Navbar = () => {
                     alt="loginLogo"
                   /> 
                   
+                  
                   <span className="hidden md:inline-block ">Login</span>
                 <SignInOut isOpen={IsSignInOutOpen} onClose={()=> setIsSignInOutOpen(false)} />
                 </button>
+                
                   </Link>}
               </li>
             </ul>
