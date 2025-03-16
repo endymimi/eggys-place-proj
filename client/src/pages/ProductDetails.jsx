@@ -30,17 +30,19 @@ const ProductDetails = () => {
                     <img src={products.image} alt={products.title} className=' rounded-lg w-full max-w-md mx-auto ' />
                 </div>
                 {/* Product Details */}
-                <div className='md:mb-50 md:mx-10'>
+                <div className='  '>
                     <h1 className='text-3xl  font-bold -'>{products.title}</h1>
                     <p className='text-gray-300 '>{products.description} 
                     </p>
-                </div>
-                <button
+                    <div className='my-26'>
+                    <button
                         onClick={() => {handleAddToCart(product) , toast('My first toast') }}
-                        className=" bg-[#B67B0F] md:leading-[100%]   md:mt-[-120px] md:w-83 lg:w-95 lg:mx-149  w-80 rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base cursor-pointer mb-[10px]"
+                        className=" bg-[#B67B0F] md:leading-[100%]  md:w-full   w-80 rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base cursor-pointer "
                       >
                         Add to Cart
                       </button>
+                      </div>
+                </div>
                 
 
         </section>
