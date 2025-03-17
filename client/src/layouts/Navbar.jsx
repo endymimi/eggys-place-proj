@@ -51,11 +51,11 @@ const Navbar = () => {
         <form>
           <div className="flex items-center bg-transparent ">
             <img
-              className="w-auto h-auto pr-2 hidden md:block"
+              className="w-12 h-auto pr-2 hidden md:block mr-10"
               src={location}
               alt="location icon"
             />
-            <h4 className="text-[#F0F0F0] md:block hidden text-[13px] md:text-[12px] font-[500]">
+            <h4 className="text-[#F0F0F0] md:block hidden text-[13px] md:text-[30px] font-[500]">
               {selectedLocation}
             </h4>
             <div role="button" className="bg-transparent m-1" tabIndex={0}>
@@ -121,7 +121,7 @@ const Navbar = () => {
                 name=""
                 id=""
                 placeholder="Search"
-                className="w-[230px]  h-[56px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[20px]"
+                className="w-[270px]  h-[50px] rounded-[32px] bg-[#F0F0F0] placeholder:text-[#100101] outline-none ps-[30px] border font-[400] text-[30px]"
               />
               {/* <img className='ab' src={searchBar} alt="" /> */}
             </form>
