@@ -136,9 +136,11 @@ const Cart = () => {
                 </div>
                 {/* div for button */}
                 <div className="py-4">
+                  
                   <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base text-white">
-                    Check Out
+                   <span> Check Out</span> 
                   </button>
+                  
                 </div>
               </div>
             </section>

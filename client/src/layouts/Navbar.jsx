@@ -3,14 +3,17 @@ import navLogo from "../assets/eggysPlaceBurger.png";
 import location from "../assets/location.png";
 import cartImg from "../assets/cartImg.png";
 import loginImg from "../assets/login icon.png";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../assets/icon search.svg";
 import SignInOut from "../Btn/SignInOut";
 import CartContext from "../context/CartContext";
 import dropdown from "../assets/dropDownIcon.svg";
 import helloIcon from "../assets/helloIcon.svg";
-
+import dashboard from "../assets/dashboardIcon.png";
+import orderIcon from "../assets/orderIcon.svg";
+import logOut from "../assets/inbox.svg";
+import inbox from "../assets/inboxx.svg";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -18,15 +21,24 @@ const Navbar = () => {
   const [IsSignInOutOpen, setIsSignInOutOpen] = useState(false)
   const {cart} = useContext(CartContext)
   const [isLoggedIn, setIsLoggedIn] = useState(!false);
+  const [outsideClick, setOutsideClick] = useState("dropdown")
+
+ 
+     
   
   // const [showLocationIcon, setShowLocationIcon] = useState(false);
   // const locationRef = useRef(null);
 
   const handleSelectedLocation = (event) => {
     setSelectedLocation(event.target.value)
+    
   }
 
   console.log("Selected Location:", selectedLocation);
+
+  const handleOutsideClick = (event) => {
+    setOutsideClick(event.target)
+  }
 
   return (
     <>
@@ -143,9 +155,40 @@ const Navbar = () => {
                 </Link>
               </li>
               
-              <li className="text-white">
+              
                 
-                {isLoggedIn ? "Hi Eggys" : 
+                {isLoggedIn ? 
+                <div>
+                <div className="dropdown dropdown-down dropdown-center">
+  <div tabIndex={0} role="button" className="text-white m-1 flex"> <img src={helloIcon} alt="" />Hi,Eggys <img src={dropdown} alt="" /></div>
+  <ul tabIndex={0} className="dropdown-content menu bg-black rounded-box z-1 w-52 p-2 shadow-sm">
+    <li className="text-white"><a>DashBoard</a></li>
+    <li className="text-white"><a>My Account</a></li>
+    <li className="text-whi"><a> Orders</a></li>
+    <li><a> Inbox</a></li>
+    <li>
+    <button class="flex gap-1 px-4 py-2 text-sm text-red-600 hover:bg-[#333]" onClick={() => document.getElementById('my_modal_2').showModal()}> <img src={logOut} alt="" /> Log Out</button>
+    </li>
+  </ul>
+</div>
+
+    <dialog id="my_modal_2" className="modal">
+    
+    <div className="modal-box">
+    <h3 className="font-bold text-lg">Hello!</h3>
+    <p className="py-4">check out</p>
+      </div>
+      <form method="dialog" className="modal-backdrop">
+    <button>close</button>
+     </form>    
+
+    </dialog>
+  </div>
+
+
+
+ 
+    : 
                 
                 <Link>
                 
@@ -169,7 +212,7 @@ const Navbar = () => {
                 </button>
                 
                   </Link>}
-              </li>
+              
             </ul>
           </div>
         </nav>

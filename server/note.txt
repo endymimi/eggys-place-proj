@@ -1,0 +1,18 @@
+project setup
+
+--initialize, npm init -y
+--setup express server
+ app.js or index.js-- where you setup your express server
+
+-- folder structures
+- routes- authRoute.js, userRoute.js, productRoute.js, orderRoute.js
+
+- controllers- userController.js, orderController.js,productController.js, authController.js
+
+- models- userModel, productModel.js, orderModel.js
+
+- middlewares -  authMiddleware,  isAdmin
+
+- utils - sendemails.js , emailTemplate
+
+- config - data base configuration...db.js , cloudinary.js
