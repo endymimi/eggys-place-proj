@@ -14,6 +14,7 @@ import dashboard from "../assets/dashboardIcon.png";
 import orderIcon from "../assets/orderIcon.svg";
 import logOut from "../assets/inbox.svg";
 import inbox from "../assets/inboxx.svg";
+import checkIcon from "../assets/checkIcon.svg";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -160,24 +161,32 @@ const Navbar = () => {
                 {isLoggedIn ? 
                 <div>
                 <div className="dropdown dropdown-down dropdown-center">
-  <div tabIndex={0} role="button" className="text-white m-1 flex"> <img src={helloIcon} alt="" />Hi,Eggys <img src={dropdown} alt="" /></div>
+  <div tabIndex={0} role="button" className="text-white m-1 flex my-3 cursor-pointer"> <img src={helloIcon} alt="" />Hi,Eggys <img src={dropdown} alt="" /></div>
   <ul tabIndex={0} className="dropdown-content menu bg-black rounded-box z-1 w-52 p-2 shadow-sm">
-    <li className="text-white"><a>DashBoard</a></li>
-    <li className="text-white"><a>My Account</a></li>
-    <li className="text-whi"><a> Orders</a></li>
-    <li><a> Inbox</a></li>
+    <li className="text-white hover:bg-[#B67B0F] md:block hidden cursor-pointer"><a> <img src={dashboard} alt="" /> DashBoard</a></li>
+    <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={helloIcon} alt="" /> My Account</a></li>
+    <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={orderIcon} alt="" /> Orders</a></li>
+    <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={inbox} alt="" /> Inbox</a></li>
     <li>
-    <button class="flex gap-1 px-4 py-2 text-sm text-red-600 hover:bg-[#333]" onClick={() => document.getElementById('my_modal_2').showModal()}> <img src={logOut} alt="" /> Log Out</button>
+    <button class=" hover:bg-[#B67B0F] cursor-pointer flex gap-1 px-4 py-2 text-sm text-red-600 " onClick={() => document.getElementById('my_modal_2').showModal()}> <img src={logOut} alt="" /> Log Out</button>
     </li>
   </ul>
 </div>
 
     <dialog id="my_modal_2" className="modal">
     
-    <div className="modal-box">
-    <h3 className="font-bold text-lg">Hello!</h3>
-    <p className="py-4">check out</p>
+    <div className="modal-box bg-[#252422] w-[425px]  p-6 flex flex-col items-center justify-center text-center ">
+      <div>
+        <img  className="mb-4" src={checkIcon} alt="check-image" />
       </div>
+    <h3 className="font-bold text-lg text-white ">Log Out</h3>
+    <p className="py-4 text-white">  Are you sure, you want to Log out.</p>
+    <div className="flex justify-center gap-17 w-full mt-4">
+        <button className="btn text-white rounded-4xl bg-[#252422] w-35 h-10">Log Out</button>
+        <button className="btn text-white rounded-4xl bg-[#B67B0F] w-35 h-10">Cancel</button>
+      </div>
+      </div>
+      
       <form method="dialog" className="modal-backdrop">
     <button>close</button>
      </form>    
