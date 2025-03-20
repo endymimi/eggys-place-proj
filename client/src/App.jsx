@@ -9,6 +9,8 @@ import LoadingRing  from "./utils/Loader";
 import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import { Toaster, toast } from 'sonner';
+import Order from "./pages/Order";
+import Checkout from "./pages/Checkout";
 
 
 
@@ -61,7 +63,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home  />} />
             <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="Cart" element={<Cart />} />
+            <Route path="/Order" element={<Order />} />
+             <Route path="Cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             
             
             </Routes>

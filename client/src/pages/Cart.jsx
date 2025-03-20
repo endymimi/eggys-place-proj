@@ -136,10 +136,12 @@ const Cart = () => {
                 </div>
                 {/* div for button */}
                 <div className="py-4">
-                  
+                
                   <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base text-white">
-                   <span> Check Out</span> 
+                 <span> Check Out</span>  
                   </button>
+                  
+                  
                   
                 </div>
               </div>
@@ -150,7 +152,7 @@ const Cart = () => {
                 Similar Products You Might Like
               </h2>
               <div className=" wrapper grid md:grid-cols-2 lg:grid-cols-3 gap-[24px] text-white">
-                {burgers.slice(3, 7).map((burger) => {
+                {burgers.slice(3, 6).map((burger) => {
                   const {
                     _id,
                     image,

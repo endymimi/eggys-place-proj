@@ -36,7 +36,7 @@ const Footer = () => {
       </div>
 
       {/* Divider Line */}
-      <hr className="border-white my-4 mx-auto md:w-8/10 lg:6/8" />
+      <hr className="border-white my-4 mx-auto md:w-10/10 lg:6/8" />
 
       {/* Footer Bottom */}
       <div className="container mx-auto flex flex-col md:flex-row px-7 md:text-sm" >

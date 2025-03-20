@@ -165,7 +165,9 @@ const Navbar = () => {
   <ul tabIndex={0} className="dropdown-content menu bg-black rounded-box z-1 w-52 p-2 shadow-sm">
     <li className="text-white hover:bg-[#B67B0F] md:block hidden cursor-pointer"><a> <img src={dashboard} alt="" /> DashBoard</a></li>
     <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={helloIcon} alt="" /> My Account</a></li>
-    <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={orderIcon} alt="" /> Orders</a></li>
+    <Link to="/Order">
+    <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={orderIcon} alt="Order-image" /> Orders</a></li>
+    </Link>
     <li className="text-white hover:bg-[#B67B0F] cursor-pointer"><a> <img src={inbox} alt="" /> Inbox</a></li>
     <li>
     <button class=" hover:bg-[#B67B0F] cursor-pointer flex gap-1 px-4 py-2 text-sm text-red-600 " onClick={() => document.getElementById('my_modal_2').showModal()}> <img src={logOut} alt="" /> Log Out</button>
