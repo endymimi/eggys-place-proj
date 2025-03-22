@@ -29,11 +29,11 @@ const Checkout = () => {
 
   return (
     <>
-      <header className="bg-[#252422] grid grid-cols-2  ">
-        <section className="space-y-6 bg-[#252422] my-5 mx-55 ">
-          <div className="bg-black w-[791px] h-[330px] space-y-6 px-4 py-4 rounded-md">
+      <header className="bg-[#252422] md:grid grid-cols-2 ">
+        <section className="space-y-6 bg-[#252422] my-5 md:mx-55 ">
+          <div className="bg-black  md:w-791 md:h-[350px] space-y-6 px-4 py-4 rounded-md">
         <div>
-  <button className="btn text-white text-xl bg-[#252422] cursor-pointer flex items-center justify-between px-4 w-[500px] h-[60px] rounded-xl hover:bg-[#3A3A38] transition">
+  <button className="btn text-white text-xl bg-[#252422] cursor-pointer flex items-center justify-between px-4 w-50 md:w-[390px] h-[60px] rounded-xl hover:bg-[#3A3A38] transition">
     <span>Recipient Information</span>
     <span className="text-[#B67B0F] font-semibold">{/* Open the modal using document.getElementById('ID').showModal() method */}
 <button className="" onClick={openModal}>Add</button>
@@ -53,7 +53,7 @@ const Checkout = () => {
 </div>
 
 <div>
-  <button className="btn text-white text-xl bg-[#252422] cursor-pointer flex items-center justify-between px-4 w-[500px] h-[60px] rounded-xl hover:bg-[#3A3A38] transition">
+  <button className="btn text-white text-xl bg-[#252422] cursor-pointer flex items-center justify-between px-4 md:w-[390px] h-[60px] rounded-xl hover:bg-[#3A3A38] transition">
     <span>Delivery Information</span>
     <span className="text-[#B67B0F] font-semibold">{/* Open the modal using document.getElementById('ID').showModal() method */}
 <button className="" onClick={openModal} >Add</button>
@@ -79,7 +79,7 @@ const Checkout = () => {
         </section>
 
         <section className="bg-[#252422] flex justify-center p-4">
-  <div className="bg-black w-full max-w-[360px] rounded-lg p-4">
+  <div className="bg-black md:w-full md:max-w-[360px] rounded-lg p-4">
     {/* Header */}
     <h2 className="text-[24px] text-white pb-4">Summary</h2>
 
