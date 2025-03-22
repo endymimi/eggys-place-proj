@@ -3,6 +3,7 @@ import { burgers, combos, drinks, chickens, chips, salads } from "../product";
 import Vectordelete from "../assets/vector delete.svg";
 import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   console.log(Cart);
@@ -136,10 +137,11 @@ const Cart = () => {
                 </div>
                 {/* div for button */}
                 <div className="py-4">
-                
+                <Link to="/Checkout">
                   <button className=" bg-[#B67B0F] leading-[100%] w-full rounded-[31px] lg:whitespace-nowrap py-[15px] px-[56px] md:text-base text-white">
                  <span> Check Out</span>  
                   </button>
+                  </Link>
                   
                   
                   
